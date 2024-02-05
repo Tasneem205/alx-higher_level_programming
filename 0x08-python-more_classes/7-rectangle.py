@@ -60,10 +60,10 @@ class Rectangle:
     def __str__(self):
         """returns the printable string of the rec"""
         str = ""
-        if self.__width != 0 and self.__height != 0:
-            str += "\n".join(str(self.print_symbol) * self.__width
-                             for j in range(self.__height))
-        return str
+        if not self.__width or not self.__height:
+            return ""
+        return ((str(self.print_symbol) * self.__width + "\n") *
+                self.__height)[:-1]
 
     def __repr__(self):
         """return a string representation of the rec"""
