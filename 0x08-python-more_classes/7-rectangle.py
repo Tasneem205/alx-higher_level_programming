@@ -59,7 +59,6 @@ class Rectangle:
 
     def __str__(self):
         """returns the printable string of the rec"""
-        str = ""
         if not self.__width or not self.__height:
             return ""
         return ((str(self.print_symbol) * self.__width + "\n") *
