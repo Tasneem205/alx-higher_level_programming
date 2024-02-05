@@ -10,7 +10,7 @@ class Rectangle:
     number_of_instances = 0
     '''int: thte number of active instances'''
 
-     print_symbol= '#'
+    print_symbol = '#'
     '''type: print symbol, can be any type'''
 
     def __init__(self, width=0, height=0):
