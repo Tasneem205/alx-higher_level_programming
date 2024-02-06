@@ -93,10 +93,10 @@ class Rectangle:
             return rect_2
         return rect_1
 
-def square(cls, size=0):
-'''instance a new square
+    def square(cls, size=0):
+        '''instance a new square
 
-Args:
-size: size of the square
-'''
-return cls(size, size)
+           Args:
+               size: size of the square
+        '''
+        return cls(size, size)
