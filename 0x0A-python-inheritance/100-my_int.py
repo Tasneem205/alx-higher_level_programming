@@ -1,16 +1,19 @@
 #!/usr/bin/python3
-'''Module for Rectangle class.'''
-Rectangle = __import__('9-rectangle').Rectangle
+"""
+Contains the class MyInt
+"""
 
 
-class Square(Rectangle):
-    '''A subclass representing a rectangle.'''
-    def __init__(self, size):
-        '''Constructor.'''
-        self.integer_validator("size", size)
-        self.__size = size
-        super().__init__(size, size)
+class MyInt(int):
+    """rebel version of an integer, perfect for opposite day!"""
+    def __new__(cls, *args, **kwargs):
+        """create a new instance of the class"""
+        return super(MyInt, cls).__new__(cls, *args, **kwargs)
 
-    def area(self):
-        '''Method for area of square.'''
-        return self.__size ** 2
+    def __eq__(self, other):
+        """what was != is now =="""
+        return int(self) != other
+
+    def __ne__(self, other):
+        """what was == is now !="""
+        return int(self) == other
