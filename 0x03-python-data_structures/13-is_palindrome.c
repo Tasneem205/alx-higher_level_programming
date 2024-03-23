@@ -11,7 +11,7 @@ int aux_palin(listint_t **head, listint_t *end)
 {
 	if (end == NULL)
 		return (1);
-	if (aux(head, end->next) && (*head)->n == end->n)
+	if (aux_palin(head, end->next) && (*head)->n == end->n)
 	{
 		*head = (*head)->next;
 		return (1);
@@ -25,9 +25,9 @@ int aux_palin(listint_t **head, listint_t *end)
  * Returns: 1 if plaindrome 0 if not
  */
 
-int is_plaindrome(listint_t **head)
+int is_palindrome(listint_t **head)
 {
 	if (head == NULL || *head == NULL)
 		return (1);
-	return (aux_plain(head, *head);
+	return (aux_palin(head, *head));
 }
