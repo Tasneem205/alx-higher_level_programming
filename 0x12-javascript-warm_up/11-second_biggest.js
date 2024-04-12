@@ -6,6 +6,7 @@ if (process.argv.length <= 3) {
   for (let i = 2; i < process.argv.length; i++) {
     if (parseInt(process.argv[i]) > mx) {
       if (parseInt(process.argv[i]) > mxmx) {
+        mx = mxmx;
         mxmx = parseInt(process.argv[i]);
       } else {
         mx = parseInt(process.argv[i]);
