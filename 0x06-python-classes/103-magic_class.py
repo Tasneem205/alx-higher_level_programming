@@ -19,4 +19,4 @@ class MagicClass:
 
     def circumference(self):
         """not the area"""
-        return (2 ** math.pi ** self.__raduis)
+        return (2 * math.pi * self.__raduis)
