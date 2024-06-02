@@ -7,15 +7,15 @@ import math
 class MagicClass:
     """Magic class implementation"""
 
-    def __init__(self, radius=0):
+    def __init__(self, raduis=0):
         """init function for a circle class"""
-        if type(radius) is not int and type(radius) is not float:
-            raise TypeError("radius must be a number")
-        self.__radius = radius
+        if type(raduis) is not int and type(raduis) is not float:
+            raise TypeError("raduis must be a number")
+        self.__raduis = raduis
 
     def area(self):
         """area function"""
-        return (self.__radius ** 2 * math.pi)
+        return (self.__raduis ** 2 * math.pi)
 
     def circumference(self):
         """not the area"""
