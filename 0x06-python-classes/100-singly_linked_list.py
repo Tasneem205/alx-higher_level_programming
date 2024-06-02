@@ -6,7 +6,7 @@
 class Node:
     """Class tp represent nodes"""
     def __init__(self, data, next_node=None):
-        """init function """
+        """init function to define a node"""
         self.data = data
         self.next_node = next_node
 
@@ -24,12 +24,12 @@ class Node:
 
     @property
     def next_node(self):
-        """getter of next node"""
+        """getter of next node value"""
         return (self.__next_node)
 
     @next_node.setter
     def next_node(self, value):
-        """setter of next_node"""
+        """setter of next_node value"""
         if not isinstance(value, Node) and value is not None:
             raise TypeError("next_node must be a Node object")
         self.__next_node = value
@@ -37,13 +37,12 @@ class Node:
 
 class SinglyLinkedList:
     """singly linked list class in python"""
-
     def __init__(self):
-        """init function """
+        """init function to define a SLL"""
         self.__head = None
 
     def sorted_insert(self, value):
-        """sorted insertion function """
+        """sorted insertion function to insert in a sorted manner"""
         new = Node(value)
         if self.__head is None:
             new.next_node = None
