@@ -1,9 +1,9 @@
 #include <Python.h>
 
 /**
-* print_python_bytes - print a python list.
-* @p: a python object list
-*/
+ * print_python_bytes - print a python list.
+ * @p: a python object list
+ */
 void print_python_bytes(PyObject *p)
 {
 unsigned char i, size;
@@ -28,7 +28,7 @@ printf("  first %d bytes: ", size);
 for (i = 0; i < size; i++)
 {
 printf("%02hhx", bytes->ob_sval[i]);
-if (i == (size-1))
+if (i == (size - 1))
 printf("\n");
 else
 printf(" ");
