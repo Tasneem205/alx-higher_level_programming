@@ -46,7 +46,7 @@ void print_python_bytes(PyObject *p)
 */
 void print_python_list(PyObject *p)
 {
-	int i;
+	int i, size, alloc;
 	const char *type;
 	PyListObject *list = (PyListObject *)p;
 	PyVarObject *var = (PyVarObject *)p;
@@ -82,11 +82,11 @@ void print_python_list(PyObject *p)
 
 void print_python_float(PyObject *p)
 {
-	double p;
+	double d;
 
 	setbuf(stdout, NULL);
 	printf("[.] float object info\n");
-	if (strcmp(p->ob_type->tp_name), "float")
+	if (strcmp(p->ob_type->tp_name, "float"))
 	{
 		printf("  [ERROR] Invalid Float Object\n");
 		return;
