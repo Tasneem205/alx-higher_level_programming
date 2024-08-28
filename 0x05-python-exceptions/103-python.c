@@ -11,9 +11,10 @@ void print_python_float(PyObject *p);
  */
 void print_python_bytes(PyObject *p)
 {
-	unsigned char i, size;
+	size_t i, len, size;
 	PyBytesObject *bytes = (PyBytesObject *)p;
 
+	setbuf(stdout, NULL);
 	printf("[.] bytes object info\n");
 	if (strcmp(p->ob_type->tp_name, "bytes") != 0)
 	{
@@ -21,10 +22,11 @@ void print_python_bytes(PyObject *p)
 		return;
 	}
 
-	printf("  size: %ld\n", ((PyVarObject *)p)->ob_size);
+	size = ((PyVarObject *)p)->ob_size;
+	printf("  size: %ld\n", size);
 	printf("  trying string: %s\n", bytes->ob_sval);
 
-	if (((PyVarObject *)p)->ob_size > 10)
+	if (((PyVarObject *)p)->ob_size > 9)
 		size = 10;
 	else
 		size = ((PyVarObject *)p)->ob_size + 1;
